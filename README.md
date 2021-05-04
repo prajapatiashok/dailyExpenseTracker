@@ -12,7 +12,9 @@
  - After installing npm packages run <b>react-native run-android</b> for ANDROID and <b>react-native run-ios</b> for IOS.
 
 
- The Google web client key and Android key has to insert in /src/screens/ResolveAuth.js file and in /android/app/src/main/res/values/strings.xml in order to login using Google.
+In order to login using Google
+ - The Google web client key has to insert into /src/screens/ResolveAuth.js file 
+ - The Google Android key has to insert into /android/app/src/main/res/values/strings.xml
 
 webClientId: xxxxXXXXxxxXXXxxxx
 <string name="server_client_id">xxXXXxxx.apps.googleusercontent.com</string>
