@@ -1,0 +1,14 @@
+export const colors = {
+  DARK_GREEN: '#219653',
+  LIGHT_GREEN: '#E0F4E1',
+  BOLDBLACK: '#1C2833',
+  WHITE: '#FFFFFF',
+  ORANGE: '#F2994A',
+  LIGHT_ORANGE: '#FDF7E0',
+  DARK_GREY: '#4F5A65',
+
+  GOOGLE: '#CD5642',
+  TAB_COLOR: '#34515E',
+  TAB_TEXT_DIM: '#a0adb2',
+  DIMMED_TEXT: '#727b84',
+};

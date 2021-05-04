@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">dailyExpenseTracker</string>
+    <string name="server_client_id">XXXXXX.apps.googleusercontent.com</string>
+</resources>
