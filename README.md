@@ -1,5 +1,5 @@
 # Daily Expense Tracker
-# A React Native App.
+## A React Native App
 
  - Context API to manage state.
 
@@ -23,4 +23,4 @@ webClientId: xxxxXXXXxxxXXXxxxx and string name="server_client_id">xxXXXxxx.apps
 
 <div>
   <img src="./blob/dET.gif" alt="Login Screen" width="250" height="400">
-  </div>
+ </div>
