@@ -7,9 +7,6 @@ const StatData = ({monthlyExpenses}) => {
 
   return (
     <View style={styles.mainContainer}>
-      {monthlyExpenses?.data?.length === 0 ? (
-        <Text style={styles.noRecord}>No records found!!!</Text>
-      ) : (
         <FlatList
           showsVerticalScrollIndicator={false}
           data={sortedData}
@@ -46,7 +43,6 @@ const StatData = ({monthlyExpenses}) => {
             );
           }}
         />
-      )}
     </View>
   );
 };
@@ -68,13 +64,6 @@ const styles = StyleSheet.create({
   amountText: {
     fontSize: 15,
     color: colors.BOLDBLACK,
-  },
-  noRecord: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    alignSelf: 'center',
-    color: colors.GOOGLE,
-    marginTop: 150
   }
 });
 

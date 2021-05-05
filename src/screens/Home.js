@@ -44,17 +44,17 @@ const Home = ({navigation}) => {
     const currentDate = selectedDate || todayDate;
     setTodayDate(currentDate);
     setShow(false);
+    //set selected day to post/edit/delete/read the expenses
     apiDate(moment(selectedDate).format('YYYY-MM-DD'));
   };
 
+  //set current day to default to post/edit/delete/read the expenses
   useEffect(() => {
-    const unsubscribe = navigation.addListener('focus', () => {
       apiDate(moment().format('YYYY-MM-DD'));
-    });
+  }, []);
 
-    return unsubscribe;
-  }, [navigation]);
 
+  //called on every isOperation/apiDataeValue is changed
   useEffect(() => {
     getExpenseOfDay(apiDateValue, state.dispatchedUserData.token);
   }, [isOperationSuccess, apiDateValue]);

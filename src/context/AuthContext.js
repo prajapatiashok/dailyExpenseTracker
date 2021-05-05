@@ -65,6 +65,7 @@ const signIn = async (dispatch, userInfo) => {
       dispatch({type: types.loading_false});
     }
   } catch (e) {
+    navigate(routes.AUTHSTACK, {screen: routes.LOGINSCREEN});
     console.log(e, 'from sign in');
   }
 };

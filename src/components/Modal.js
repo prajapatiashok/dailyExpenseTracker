@@ -107,6 +107,7 @@ const ModalComponent = ({
             onChangeText={setDescription}
             value={description}
             placeholder=" Expense description"
+            placeholderTextColor={colors.DIMMED_TEXT}
           />
           <View style={{marginVertical: 10}} />
           <TextInput
@@ -115,6 +116,7 @@ const ModalComponent = ({
             value={amount}
             placeholder="Amount"
             keyboardType="numeric"
+            placeholderTextColor={colors.DIMMED_TEXT}
           />
           <View style={{marginVertical: 30}} />
 
@@ -179,6 +181,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 30,
     borderRadius: 10,
     paddingHorizontal: 10,
+    color: colors.BOLDBLACK
   },
 });
 

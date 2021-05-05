@@ -60,18 +60,28 @@ const Report = () => {
           </Text>
         </View>
       </View>
-      <View style={styles.chartContainer}>
-        <LineChart lineData={monthlyExpenses.data} />
-      </View>
-      <View style={styles.listContainer}>
-        {loading ? (
-          <ActivityIndicator
-            size="large"
-            color={colors.DARK_GREEN}
-            style={{marginTop: 150}}
-          />
+      <View style={styles.statDataWrapper}>
+        {monthlyExpenses?.data?.length === 0 ? (
+          <Text style={styles.noRecord}>No records found!!!</Text>
         ) : (
-          <StatData monthlyExpenses={monthlyExpenses} />
+          <>
+            {loading ? (
+              <ActivityIndicator
+                size="large"
+                color={colors.DARK_GREEN}
+                style={{marginTop: 150}}
+              />
+            ) : (
+              <>
+                <View style={styles.chartContainer}>
+                  <LineChart lineData={monthlyExpenses.data} />
+                </View>
+                <View style={styles.listContainer}>
+                  <StatData monthlyExpenses={monthlyExpenses} />
+                </View>
+              </>
+            )}
+          </>
         )}
       </View>
     </View>
@@ -98,12 +108,15 @@ const styles = StyleSheet.create({
     paddingBottom: 8,
     flex: 1,
   },
+  statDataWrapper:{
+    flex: 15
+  },
   chartContainer: {
-    flex: 6,
+    flex: 2.5,
   },
   listContainer: {
     flex: 6,
-    marginTop: 5
+    marginTop: 5,
   },
   header: {
     fontSize: 20,
@@ -129,6 +142,13 @@ const styles = StyleSheet.create({
   dropDownContainerStyles: {
     height: 35,
     width: 140,
+  },
+  noRecord: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    alignSelf: 'center',
+    color: colors.GOOGLE,
+    marginTop: 150,
   },
 });
 
