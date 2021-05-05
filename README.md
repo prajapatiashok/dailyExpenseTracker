@@ -22,5 +22,5 @@ webClientId: xxxxXXXXxxxXXXxxxx and string name="server_client_id">xxXXXxxx.apps
 ### App Screen
 
 <div>
-  <img src="./blob/det.gif" alt="Login Screen" width="250" height="400">
+  <img src="./blob/dET.gif" alt="Login Screen" width="250" height="400">
   </div>
