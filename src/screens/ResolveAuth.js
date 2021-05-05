@@ -10,7 +10,7 @@ const ResolveAuthScreen = () => {
   useEffect(() => {
     GoogleSignin.configure({
       webClientId:
-        'xxxXXXXxx.apps.googleusercontent.com',
+        'xxXXXxxx.apps.googleusercontent.com',
       offlineAccess: true, // if you want to access Google API on behalf of the user FROM YOUR SERVER
       forceCodeForRefreshToken: true, // [Android] related to `serverAuthCode`, read the docs link below *.
       iosClientId: '', // [iOS] optional, if you want to specify the client ID of type iOS (otherwise, it is taken from GoogleService-Info.plist)

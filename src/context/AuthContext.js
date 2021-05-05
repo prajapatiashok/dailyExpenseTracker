@@ -27,7 +27,6 @@ const authReducer = (state, action) => {
 
 //if the googleData and userData from the database is 
 //exist in the system, this will redirect to the homepage
-
 const tryLocalSignIn = dispatch => async () => {
 
   const googleLoginData = await storage.getData(
@@ -35,7 +34,9 @@ const tryLocalSignIn = dispatch => async () => {
   );
   if (googleLoginData) {
     const userData = await storage.getData(storageConstants.USER_DATA);
-
+    if (!userData) {
+      navigate(routes.LOGINSCREEN);
+    }
     const userInfo = JSON.parse(googleLoginData);
     dispatch({type: types.responseGoogleData, payload: userInfo});
 
@@ -47,7 +48,12 @@ const tryLocalSignIn = dispatch => async () => {
   }
 };
 
-//sign in user if user exist in database
+/** 
+ *  API call to sign in 
+ * 
+ * @param {string} email userInfo.user.email (gmail of user)
+ * @param {string} gmail_id userInfo.user.id (gmail_id of user)
+ */
 const signIn = async (dispatch, userInfo) => {
   try {
     const data = {

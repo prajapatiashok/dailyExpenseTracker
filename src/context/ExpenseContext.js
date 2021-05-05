@@ -29,6 +29,11 @@ const expenseReducer = (state, action) => {
   }
 };
 
+/**
+ * 
+ * @param {String} date set the selected date by user in state
+ */
+
 const apiDate = dispatch => async date => {
   try {
     dispatch({type: types.setAPIDate, payload: date});
@@ -37,6 +42,13 @@ const apiDate = dispatch => async date => {
   }
 };
 
+/**
+ * API call to create expense 
+ * 
+ * @param {Object} data Data of expense to create 
+ * @param {String} token Authentication Token
+ * 
+ */
 const createExpense = dispatch => async (data, token) => {
   const config = {
     headers: {Authorization: `Bearer ${token}`},
@@ -64,6 +76,14 @@ const createExpense = dispatch => async (data, token) => {
   }
 };
 
+/**
+ * API call to retrieve expenses of a single day 
+ * 
+ * @param {String} date Date to get the expenses
+ * @param {String} token Authentication Token
+ * 
+ */
+
 const getExpenseOfDay = dispatch => async (date, token) => {
   const config = {
     headers: {Authorization: `Bearer ${token}`},
@@ -82,8 +102,14 @@ const getExpenseOfDay = dispatch => async (date, token) => {
   }
 };
 
+/**
+ * API call to retrieve expenses of a month 
+ * 
+ * @param {String} date Date to get the expenses stat of the month
+ * @param {String} token Authentication Token
+ * 
+ */
 const getExpenseStat = dispatch => async (date, token) => {
-  console.log(date, token,"90000")
   const config = {
     headers: {Authorization: `Bearer ${token}`},
   };
@@ -96,14 +122,20 @@ const getExpenseStat = dispatch => async (date, token) => {
       dispatch({type: types.MONTH_EXPENSES, payload: response.data});
       dispatch({type: types.loading_false});
     }
-
-
     console.log(response.data)
   } catch (e) {
     console.log(e);
   }
 };
 
+/**
+ * API call to update expense by its id
+ * 
+ * @param {String} id  object id of the expense
+ * @param {String} data data to update
+ * @param {String} token Authentication Token
+ * 
+ */
 const updateExpense = dispatch => async (id, data, token) => {
   const config = {
     headers: {Authorization: `Bearer ${token}`},
@@ -139,6 +171,14 @@ const updateExpense = dispatch => async (id, data, token) => {
   }
 };
 
+
+/**
+ * API call to delete expense by its id
+ * 
+ * @param {String} id  object id of the expense
+ * @param {String} token Authentication Token
+ * 
+ */
 const deleteExpense = dispatch => async (id, token) => {
   const config = {
     headers: {Authorization: `Bearer ${token}`},
